@@ -1,33 +1,28 @@
 import random
 
-print("\n")
-
+print("\nWelcome to the Number Guessing Game!\n")
 attempts = 0
 
 while True:
-
-    a = random.randint(1, 10)
-
+    a = random.randint(1, 10)  # Random number between 1 and 10
     print("Enter a Number between 1 to 10: ")
     print("Or Enter 0 to Quit: ")
     b = int(input("Input: "))
 
-    if a >= 0 and a <= 10:
+    if b == 0:  # Quit condition
+        print("Thank You for Playing!")
+        break
 
+    if 1 <= b <= 10:  # Valid input range
+        attempts += 1
         if a == b:
-            print("The Number was Indeed", a)
-            print("Correct Guess !!! \n")
-            print(f"Congratulation, You gussed the Correct Number in {
+            print(f"The Number was Indeed {a}")
+            print("Correct Guess!!! \n")
+            print(f"Congratulations, You guessed the Correct Number in {
                   attempts} attempts")
-        elif a == 0:
-            print("Thank You for Playing")
-            break
+            break  # End the game after correct guess
         else:
-            print("The Number was", a)
-            print("Wrong Guess, Try Again \n")
+            print(f"The Number was {a}")
+            print("Wrong Guess, Try Again! \n")
     else:
-        print("Enter a Number within Range \n")
-
-    attempts += 1
-
-print("\n")
+        print("Please Enter a Number within the Range 1 to 10 \n")
